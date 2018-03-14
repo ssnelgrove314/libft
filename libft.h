@@ -6,7 +6,7 @@
 /*   By: ssnelgro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 17:05:16 by ssnelgro          #+#    #+#             */
-/*   Updated: 2018/03/12 09:24:22 by ssnelgro         ###   ########.fr       */
+/*   Updated: 2018/03/14 14:28:35 by ssnelgro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int					ft_numlen(int num);
 int					ft_isspace(int c);
 int					ft_gcd(int a, int b);
 int					ft_iscntrl(int c);
-int					isxdigit(int c);
+int					ft_isxdigit(int c);
 int					ft_sqrt(int num);
 
 int					ft_atoi(char *str);
