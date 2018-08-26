@@ -42,9 +42,11 @@ void				ft_vector_nappend(t_vector *vector, char *newdata,
 					size_t n);
 void				ft_vector_free(t_vector *vector);
 
-int					ft_charswap(char *a, char *b);
+void					ft_charswap(char *a, char *b);
 char				*ft_imaxtoa(intmax_t value);
 char 				*ft_uimaxtoa_base(uintmax_t value, const char *base);
+
+void				*ft_recalloc(void *ptr, size_t src_size, size_t new_size);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alist, void (*del)(void *, size_t));

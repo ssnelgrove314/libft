@@ -21,8 +21,9 @@ FILES	+= ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove \
 		ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 		ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter \
 		ft_lstmap ft_isspace ft_numlen ft_numlen ft_isspace \
-		ft_gcd ft_iscntrl ft_isxdigit ft_sqrt ft_fopen ft_lstappend \
+		ft_gcd ft_iscntrl ft_isxdigit ft_sqrt ft_lstappend \
 		ft_strlcpy ft_vector ft_charswap ft_uimaxtoa_base ft_imaxtoa \
+		ft_recalloc
 
 FILES_BIN := $(addsuffix .o,$(FILES))
 
