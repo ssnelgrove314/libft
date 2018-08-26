@@ -33,6 +33,19 @@ typedef struct		s_vector
 	char			*data;
 }					t_vector;
 
+void				ft_subvector_slide(t_vector *vector, char *data, char *target,
+					size_t data_len);
+int					ft_vector_init(t_vector *vector, size_t init_cap);
+void				ft_vector_append(t_vector *vector, char *newdata);
+void				ft_vector_resize(t_vector *vector, size_t min);
+void				ft_vector_nappend(t_vector *vector, char *newdata,
+					size_t n);
+void				ft_vector_free(t_vector *vector);
+
+int					ft_charswap(char *a, char *b);
+char				*ft_imaxtoa(intmax_t value);
+char 				*ft_uimaxtoa_base(uintmax_t value, const char *base);
+
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alist, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alist, void (*del)(void *, size_t));

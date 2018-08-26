@@ -409,3 +409,5 @@
 # define FREE(...) EXP(APPLY(free, __VA_ARGS__))
 # define CHKALLOC(...) EXP(IF(NOT(AND(__VA_ARGS__)), CHKALLOC2(__VA_ARGS__)))
 # define CHKALLOC2(...) FREE(__VA_ARGS__), RET(NULL)
+
+#endif
