@@ -17,12 +17,21 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# include "macrosoft.h"
+
 typedef	struct		s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_vector
+{
+	size_t			len;
+	size_t			cap;
+	char			*data;
+}					t_vector;
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alist, void (*del)(void *, size_t));
