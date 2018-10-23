@@ -1,63 +1,33 @@
-NAME := libft.a
+NAME	:=	libft.a
+AR		:=	ar
+CC 		:=	gcc
+CFLAGS	:=	-Wall -Wextra -Werror -I.
 
-AR		:= ar
+SRC		:=	$(wildcard src/mem/*.c) \
+			$(wildcard src/string/*.c) \
+			$(wildcard src/io/*.c) \
+			$(wildcard src/math/*.c) \
+			$(wildcard src/list/*.c) \
+			$(wildcard src/ctype/*.c) \
+			$(wildcard src/vector/*.c) \
+			$(wildcard src/stdlib/*.c) \
+			$(wildcard src/stack/*.c) \
+			$(wildcard src/qsort/*.c) \
+			$(wildcard *.c) 
 
-CC 		:= gcc
-
-CFLAGS	:= -Wall -Wextra -Werror -I.
-
-SOURCE_DIR := .
-
-FILES	+= ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove \
-		ft_memchr ft_memcmp ft_strlen ft_strdup ft_strcpy \
-		ft_strncpy ft_strcat ft_strncat ft_strlcat ft_strchr \
-		ft_strrchr ft_strstr ft_strnstr ft_strcmp ft_strncmp \
-		ft_atoi ft_isalpha ft_isdigit ft_isalnum ft_isascii \
-		ft_isprint ft_toupper ft_tolower ft_memalloc ft_memdel \
-		ft_strnew ft_strdel ft_strclr \
-		ft_striter ft_striteri ft_strmap ft_strmapi ft_strequ \
-		ft_strnequ ft_strsub ft_strjoin ft_strtrim ft_strsplit \
-		ft_itoa ft_putchar ft_putstr ft_putendl ft_putnbr \
-		ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
-		ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter \
-		ft_lstmap ft_isspace ft_numlen ft_numlen ft_isspace \
-		ft_gcd ft_iscntrl ft_isxdigit ft_sqrt ft_lstappend \
-		ft_strlcpy ft_vector ft_charswap ft_uimaxtoa_base ft_imaxtoa \
-		ft_recalloc
-
-FILES_BIN := $(addsuffix .o,$(FILES))
-
-BIN_DIR := .
-OBJ := $(addprefix $(BIN_DIR)/,$(FILES_BIN))
-
-INC := .
-
-$(BIN_DIR)/%.o: $(SOURCE_DIR)/%.c
-	@$(CC) $(CFLAGS) -I $(INC) -c $^ -o $@
-	@/bin/echo "$^: CHECK"
-
-.PHONY: clean fclean re
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "\nObject Files: CHECK!"
 	@ar rc $@ $(OBJ)
 	@ranlib $@
-	@echo "\nLibrary $(NAME): CHECK!\n"
 
-$(OBJ): | $(BIN_DIR)
-
-# $(BIN_DIR):
-#	@mkdir -p $(BIN_DIR)
-
+.PHONY: clean fclean re
 clean:
 	@rm -rf $(OBJ)
-	@echo "Cybermen say: DELETE DELETE DELETE DELETE DELETE\n"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "Resistance is futile: $(NAME) has been assimilated\n"
 
 re: fclean all
-
