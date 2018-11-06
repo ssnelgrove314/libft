@@ -31,5 +31,7 @@
 # include "src/io/ft_io.h"
 # include "src/stdlib/ft_stdlib.h"
 # include "src/vector/ft_vector.h"
+# include "src/queue/ft_queue.h"
+# include "src/get_next_line/get_next_line.h"
 
 #endif

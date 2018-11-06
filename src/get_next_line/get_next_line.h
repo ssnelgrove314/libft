@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssnelgro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/06 01:57:07 by ssnelgro          #+#    #+#             */
-/*   Updated: 2018/03/12 10:24:33 by ssnelgro         ###   ########.fr       */
+/*   Created: 2018/03/25 00:57:48 by ssnelgro          #+#    #+#             */
+/*   Updated: 2018/05/15 17:30:53 by ssnelgro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
-{
-	char *spaces;
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-	spaces = "\t\n\v\f\r ";
-	while (spaces)
-	{
-		if (*spaces == (char)c)
-			return (1);
-		spaces++;
-	}
-	return (0);
-}
+# define GNL_BUF_SIZE 32
+
+# include "../../libft.h"
+# include <stdlib.h>
+# include <unistd.h>
+
+# define LINCHK(x) if (!x) return (0);
+# define FST_NL_STORAGE (ft_strchr(f->storage, '\n'))
+
+typedef struct		s_gnl
+{
+	int				fd;
+	char			*storage;
+	struct s_gnl	*next;
+}					t_gnl;
+
+int					get_next_line(const int fd, char **line);
+
+#endif
