@@ -1,7 +1,7 @@
 NAME	:=	libft.a
 AR		:=	ar
 CC 		:=	gcc
-CFLAGS	:=	-Wall -Wextra -Werror -I.
+CFLAGS	:=	-Wall -Wextra -Werror -I. -g
 
 SRC		:=	$(wildcard src/mem/*.c) \
 			$(wildcard src/string/*.c) \

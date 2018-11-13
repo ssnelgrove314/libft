@@ -24,8 +24,8 @@ static int			lineset(t_gnl *f)
 	int				ret;
 	char			*tmp;
 
-	buffer = ft_strnew(BUFF_SIZE + 1);
-	if ((ret = read(f->fd, buffer, BUFF_SIZE)) > 0)
+	buffer = ft_strnew(GNL_BUF_SIZE + 1);
+	if ((ret = read(f->fd, buffer, GNL_BUF_SIZE)) > 0)
 	{
 		buffer[ret] = '\0';
 		tmp = f->storage;
