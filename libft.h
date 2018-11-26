@@ -33,5 +33,7 @@
 # include "src/vector/ft_vector.h"
 # include "src/queue/ft_queue.h"
 # include "src/get_next_line/get_next_line.h"
+# include "src/ft_getopt_long/ft_getopt_long.h"
+# include "src/printf/ft_printf.h"
 
 #endif
