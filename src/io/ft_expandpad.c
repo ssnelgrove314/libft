@@ -6,13 +6,14 @@
 /*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 18:25:52 by jkrause           #+#    #+#             */
-/*   Updated: 2017/08/17 22:07:09 by jkrause          ###   ########.fr       */
+/*   Updated: 2018/11/28 18:02:31 by ssnelgro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_io.h"
 
-void			*ft_expandwrite(void *new, int newlen, void *src, int *srcsize)
+void				*ft_expandwrite(void *new,\
+					int newlen, void *src, int *srcsize)
 {
 	int				length;
 	int				newlength;
@@ -31,7 +32,7 @@ void			*ft_expandwrite(void *new, int newlen, void *src, int *srcsize)
 
 char				*ft_expandpad(char c, int repeat, char *result, int *bsize)
 {
-	char				*tmp;
+	char			*tmp;
 
 	tmp = ft_strnew(repeat);
 	ft_memset(tmp, c, repeat);

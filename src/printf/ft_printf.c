@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
+/*   By: ssnelgro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/18 11:15:43 by jkrause           #+#    #+#             */
-/*   Updated: 2017/08/22 15:35:04 by jkrause          ###   ########.fr       */
+/*   Created: 2018/11/28 16:49:43 by ssnelgro          #+#    #+#             */
+/*   Updated: 2018/11/28 16:50:57 by ssnelgro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/*
-** Function: search
-** Return: parsed - The 
-** Params:
-** Description:
-**
-*/
 
 t_input				*search(char *fmt)
 {
@@ -39,16 +31,6 @@ t_input				*search(char *fmt)
 	}
 	return (0);
 }
-
-/*
-** Function: ft_printf
-** Return: The length of the string printed.
-** Args: fmt (The format string with % markers for specifiers)
-** ... (va_list with the remaining arguments for printf to parse)
-** Description: The top level printf function. Everything else falls below. 
-** It prints a formated string. It calls search in a loop to parse all specifiers.
-** This printf uses the write as you go method.
-*/
 
 int					ft_printf(const char *fmt, ...)
 {

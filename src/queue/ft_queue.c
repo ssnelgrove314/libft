@@ -1,12 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_queue.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssnelgro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/28 17:15:57 by ssnelgro          #+#    #+#             */
+/*   Updated: 2018/11/28 17:23:13 by ssnelgro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_queue.h"
 
 void			init_queue(t_queue *q)
 {
 	if (!q)
-	{
-		//queue_error("Null Queue");
 		return ;
-	}
 	q->head = 0;
 	q->tail = -1;
 	q->size = 0;
@@ -15,15 +24,9 @@ void			init_queue(t_queue *q)
 void			enqueue(t_queue *q, void *item)
 {
 	if (!q)
-	{
-		//queue_error("Null Queue");
 		return ;
-	}
 	if (full_queue(q))
-	{
-		//queue_error("Queue is full\n");
 		return ;
-	}
 	(q->tail)++;
 	(q->tail) %= QUEUE_CAPACITY;
 	(q->data)[q->tail] = item;
@@ -36,15 +39,9 @@ void			*dequeue(t_queue *q)
 
 	item = NULL;
 	if (!q)
-	{
-		//queue_error("Null Queue");
 		return (item);
-	}
-	if(empty_queue(q))
-	{
-		//queue_error("Queue is empty\n");
+	if (empty_queue(q))
 		return (item);
-	}
 	item = (q->data)[q->head];
 	(q->head)++;
 	(q->head) %= QUEUE_CAPACITY;
@@ -55,19 +52,13 @@ void			*dequeue(t_queue *q)
 int				empty_queue(t_queue *q)
 {
 	if (!q)
-	{
-		//queue_error("Null Queue");
 		return (-1);
-	}
 	return (q->size == 0);
 }
 
 int				full_queue(t_queue *q)
 {
 	if (!q)
-	{
-		//queue_error("Null Queue");
 		return (-1);
-	}
 	return (q->size == QUEUE_CAPACITY);
 }

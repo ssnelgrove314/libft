@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   asterisks_module.c                                 :+:      :+:    :+:   */
+/*   ft_stack2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssnelgro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 16:49:16 by ssnelgro          #+#    #+#             */
-/*   Updated: 2018/11/28 16:50:42 by ssnelgro         ###   ########.fr       */
+/*   Created: 2018/11/28 17:51:40 by ssnelgro          #+#    #+#             */
+/*   Updated: 2018/11/28 17:52:52 by ssnelgro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_stack.h"
 
-int					asterisks_module(t_input *input, va_list *ptr)
+int				stack_empty(t_stack *stack)
 {
-	if (input->asterisks > 1)
-	{
-		input->width = va_arg(*ptr, int);
-		input->precision = va_arg(*ptr, int);
-	}
-	else if (input->asterisks > 0)
-		input->width = va_arg(*ptr, int);
-	return (0);
+	return (stack->top < 0);
+}
+
+int				stack_full(t_stack *stack)
+{
+	return (stack->top >= stack->max_size - 1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_module.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkrause <jkrause@student.42.us.org>        +#+  +:+       +#+        */
+/*   By: ssnelgro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/25 14:27:21 by jkrause           #+#    #+#             */
-/*   Updated: 2017/08/22 15:23:08 by jkrause          ###   ########.fr       */
+/*   Created: 2018/11/28 16:45:51 by ssnelgro          #+#    #+#             */
+/*   Updated: 2018/11/28 16:45:59 by ssnelgro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Function: check_flags
 ** Return: void
 ** Params: input struct and &fmt
-** Description: checks and sets all flags for the other modules to use. 
+** Description: checks and sets all flags for the other modules to use.
 */
 
 void				check_flags(t_input *input, char **fmt)
@@ -114,7 +114,8 @@ void				check_length_hijacked(t_input *input, char **fmt)
 ** Function: parse_module
 ** Return: 1
 ** Params: input and a pointer offset (used with search)
-** Description: This module parses all flags, width, length, precision and conversion spec
+** Description: This module parses all flags, width, length, precision and
+** conversion spec
 ** It sets all the values in input so they can be used by format module
 */
 
